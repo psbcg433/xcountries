@@ -17,7 +17,7 @@ const Homepage = () => {
         setCountryDataList(countrydata);
         setCompleteCountryDataList(countrydata);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.log("Error fetching data:", error);
       }
     };
 
@@ -38,19 +38,20 @@ const Homepage = () => {
 
   const handleChange = useCallback(
     debounce((querry) => {
-
+      console.log("Querry:", querry);
       if(querry.trim()==="")
       {
-        
+        console.log(completeCountryDataList)
         setCountryDataList(completeCountryDataList)
       }
       else
       {
         const filterdDataList = completeCountryDataList.filter((country)=>country.name.toLowerCase().includes(querry.toLowerCase()))
+        console.log(filterdDataList)
         setCountryDataList(filterdDataList)
     } 
       
-    }, 1000)
+    }, 1000),[completeCountryDataList]
   );
 
   const onSearchChange = (querry) => {
