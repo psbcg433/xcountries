@@ -4,16 +4,18 @@ import { useState, useEffect } from "react";
 import CountryGrid from "./CountryGrid";
 import SearchBar from "./SearchBar";
 const Homepage = () => {
-  const API_ENDPOINT = "https://xcountries-backend.azurewebsites.net/all";
+  const API_ENDPOINT = "https://restcountries.com/v3.1/all";
   const [completeCountryDataList, setCompleteCountryDataList] = useState([]);
   const [countryDataList, setCountryDataList] = useState([]);
   const [searcValue, setSearchValue] = useState("");
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const countryapiresult = await axios.get(API_ENDPOINT);
         const countrydata = await countryapiresult.data;
+        console.log("COUNTRY DATA:",countrydata)
         setCountryDataList(countrydata);
         setCompleteCountryDataList(countrydata);
       } catch (error) {
@@ -46,7 +48,7 @@ const Homepage = () => {
       }
       else
       {
-        const filterdDataList = completeCountryDataList.filter((country)=>country.name.toLowerCase().includes(querry.toLowerCase()))
+        const filterdDataList = completeCountryDataList.filter((country)=>country.name.common.toLowerCase().includes(querry.toLowerCase()))
         console.log(filterdDataList)
         setCountryDataList(filterdDataList)
     } 
