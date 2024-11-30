@@ -1,5 +1,4 @@
-.countryCard
-{
+.countryCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,38 +8,37 @@
     height: 100px;
     width: 150px;
     text-align: center;
-}
-.countryCard img
-{
+  }
+  
+  .countryCard img {
     height: 3em;
     width: 4em;
-}
-
-.countryGrid
-{
+  }
+  
+  .countryGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     justify-content: center;
     align-items: center;
-}
-.searchbar
-{
+  }
+  
+  .searchbar {
     width: 100%;
     background-color: lightgray;
     padding: 1.2em;
     margin-bottom: 1em;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    
-}
-.searchbar input
-{
+  }
+  
+  .searchbar input {
     padding: 0.5em 1em;
     width: 70%;
     border: none;
     outline: none;
-}
+  }
+  

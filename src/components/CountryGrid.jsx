@@ -2,21 +2,19 @@ import React from "react";
 import CountryCard from "./CountryCard";
 
 const CountryGrid = ({ countryDataList }) => {
-  console.log("DATA RECEIVED:", countryDataList);  // Log to check what data is coming in
-  
   return (
     <div className="countryGrid">
-      {countryDataList && countryDataList.length > 0 && (
-        countryDataList.map((country, index) => (
+      {countryDataList.length > 0 ? (
+        countryDataList.map((country) => (
           <CountryCard
-            key={country.abbr ? `${country.abbr}-${index}` : index} // Use a unique key, combining abbr and index or just index
+            key={country.cca3} 
             countryflag={country.flags.png}
             countryname={country.name.common}
           />
         ))
-      )
-      // Handle case where no countries match the search
-      }
+      ) : (
+        ''
+      )}
     </div>
   );
 };

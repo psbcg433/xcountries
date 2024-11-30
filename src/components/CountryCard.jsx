@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const CountryCard = ({countryflag,countryname}) => {
+const CountryCard = ({ countryflag, countryname }) => {
   return (
-    <div className='countryCard'>
-      <img src={countryflag} alt={countryname} />
+    <div className="countryCard">
+      <img src={countryflag} alt={`${countryname} flag`} />
       <h4>{countryname}</h4>
     </div>
-  )
-}
+  );
+};
 
-export default CountryCard
+export default CountryCard;
